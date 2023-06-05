@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD DATA</title>
+  </head>
+  <body>
+    <br />
+    <a href="/CrudFunc/createStudent">Create Student</a>
+    <br />
+    <h1>Students</h1>
+    <table border="1">
+      <thead>
+        <th>Id</th>
+        <th>first Name</th>
+        <th>last Name</th>
+        <th>Test Score</th>
+      </thead>
+      {% for student in students %}
+      <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.testscore}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

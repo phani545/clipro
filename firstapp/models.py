@@ -7,3 +7,11 @@ class Employee(models.Model):
     salary = models.FloatField()
     email = models.CharField(max_length=30)
 
+
+class Project(models.Model):
+    startDate = models.DateTimeField()
+    endDate = models.DateTimeField()
+    name = models.CharField(max_length=30)
+    assigned = models.CharField(max_length=30)
+    priority = models.IntegerField()
+

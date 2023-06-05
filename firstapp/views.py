@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from firstapp.models import Employee
+from firstapp.models import Employee,Project
 import datetime
-from . import forms
+from firstapp.forms import ProjectForm,UserRegistrationForm
 
 # Create your views here.
 # def display(request):
@@ -46,7 +46,23 @@ def shoes(request):
     return render(request, 'templatesApp/product.html',product_dic)
 
 def index(request):
-    return render(request, 'templatesApp/index.html')
+    return render(request,'modelApp/index.html')
+    #return render(request, 'templatesApp/index.html')
+
+def listProjects(request):
+    projectList = Project.objects.all()
+    return render(request,'modelApp/listProjects.html',{'projects':projectList})
+
+def addProject(request):
+    form = ProjectForm()
+    if request.method=='POST':
+        form=ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return index(request)
+    return render(request,'modelApp/addProjects.html',{'form':form})
+
+
 
 
 def employeedata(request):

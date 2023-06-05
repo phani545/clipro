@@ -28,6 +28,9 @@ urlpatterns = [
     path('shoes/',views.shoes,name='shoes'),
     path('employeedata/',views.employeedata,name='employeedata'),
     path('userRegistrationView/',views.userRegistrationView,name='userRegistrationView'),
+    path('listProjects/',views.listProjects,name='listProjects'),
+    path('addProject/',views.addProject,name='addProject'),
+    
     
     
 
