@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Update Form:</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <!-- <input type="text" name="firstName" value="{{stud.firstName}}" /><br />
+      Last Name:<input
+        type="text"
+        name="lastName"
+        value="{{stud.lastName}}"
+      /><br />
+      TestScore:<input
+        type="text"
+        name="testscore"
+        value="{{stud.testscore}}"
+      /><br /><br /> -->
+      <table>
+        {{form.as_table}} {% csrf_token %}
+      </table>
+      <input type="submit" value="Update" />
+    </form>
+  </body>
+</html>

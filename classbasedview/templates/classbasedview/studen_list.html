@@ -8,7 +8,7 @@
   </head>
   <body>
     <br />
-    <a href="/CrudFunc/createStudent">Create Student</a>
+
     <br />
     <h1>Students</h1>
     <table border="1">
@@ -18,7 +18,7 @@
         <th>last Name</th>
         <th>Test Score</th>
       </thead>
-      {% for student in students %}
+      {% for student in studen_list %}
       <tr>
         <td>{{student.id}}</td>
         <td>{{student.firstName}}</td>
@@ -27,7 +27,7 @@
         <td><a href="/CrudFunc/deleteStudent/{{student.id}}">delete</a></td>
         <td><a href="/CrudFunc/updateStudent/{{student.id}}">update</a></td>
       </tr>
-      updateStudent {% endfor %}
+      {% endfor %}
     </table>
   </body>
 </html>

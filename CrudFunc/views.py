@@ -17,4 +17,23 @@ def createStudent(request):
         return getStudents(request)
     return render(request,'crudApp/createform.html',{'form':form})
 
+def deleteStudent(request,id):
+    stud = Studen.objects.get(id=id) 
+    stud.delete()
+    return getStudents(request)
+
+
+def updateStudent(request,id):    
+    stud = Studen.objects.get(id=id) 
+    form=StudentForm(instance=stud)
+    if request.method == 'POST':
+        form = StudentForm(request.POST,instance=stud)
+        if form.is_valid():
+            form.save()
+            return getStudents(request)
+    return render(request,'crudApp/updateform.html',{'form':form})
+
+
+
+
 

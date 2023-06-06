@@ -9,6 +9,8 @@ urlpatterns = [
    
     path('',views.getStudents,name='getStudents'),
     path('createStudent/',views.createStudent,name='createStudent'),
+    path('deleteStudent/<int:id>',views.deleteStudent,name='deleteStudent'),
+    path('updateStudent/<int:id>',views.updateStudent,name='updateStudent'),
     
     
     
