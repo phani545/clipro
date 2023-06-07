@@ -20,14 +20,16 @@
       </thead>
       {% for student in studen_list %}
       <tr>
-        <td>{{student.id}}</td>
+        <td><a href="/classbasedview/{{student.id}}">{{student.id}}</a></td>
+
         <td>{{student.firstName}}</td>
         <td>{{student.lastName}}</td>
         <td>{{student.testscore}}</td>
-        <td><a href="/CrudFunc/deleteStudent/{{student.id}}">delete</a></td>
-        <td><a href="/CrudFunc/updateStudent/{{student.id}}">update</a></td>
+        <!-- <td><a href="/CrudFunc/deleteStudent/{{student.id}}">delete</a></td>
+        <td><a href="/CrudFunc/updateStudent/{{student.id}}">update</a></td> -->
       </tr>
       {% endfor %}
     </table>
+    <a href="/classbasedview/create/">addStudent</a>
   </body>
 </html>
