@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'quoteapp',
     'CrudFunc',
     'classbasedview',
+    'cookieApp',
 ]
 
 MIDDLEWARE = [

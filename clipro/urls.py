@@ -24,5 +24,6 @@ urlpatterns = [
     path('quoteapp/',include('quoteapp.urls')),
     path('CrudFunc/',include('CrudFunc.urls')),
     path('classbasedview/',include('classbasedview.urls')),
+    path('cookie/',include('cookieApp.urls')),
 
 ]
