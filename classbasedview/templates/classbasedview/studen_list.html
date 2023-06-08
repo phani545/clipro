@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRUD DATA</title>
-  </head>
-  <body>
-    <br />
+{% extends 'classbasedview/base.html' %} {%block body_block%}
+<br />
+{%load custFilters%}
+<br />
+<h1>Students</h1>
+<table border="1">
+  <thead>
+    <th>Id</th>
+    <th>first Name</th>
+    <th>last Name</th>
+    <th>Test Score</th>
+  </thead>
+  {% for student in studen_list %}
+  <tr>
+    <td><a href="/classbasedview/{{student.id}}">{{student.id}}</a></td>
 
-    <br />
-    <h1>Students</h1>
-    <table border="1">
-      <thead>
-        <th>Id</th>
-        <th>first Name</th>
-        <th>last Name</th>
-        <th>Test Score</th>
-      </thead>
-      {% for student in studen_list %}
-      <tr>
-        <td><a href="/classbasedview/{{student.id}}">{{student.id}}</a></td>
-
-        <td>{{student.firstName}}</td>
-        <td>{{student.lastName}}</td>
-        <td>{{student.testscore}}</td>
-        <!-- <td><a href="/CrudFunc/deleteStudent/{{student.id}}">delete</a></td>
+    <td>{{student.firstName | myAppend:"Mr." }}</td>
+    <td>{{student.lastName | myLower }}</td>
+    <td>{{student.testscore | add:"2"}}</td>
+    <!-- <td><a href="/CrudFunc/deleteStudent/{{student.id}}">delete</a></td>
         <td><a href="/CrudFunc/updateStudent/{{student.id}}">update</a></td> -->
-      </tr>
-      {% endfor %}
-    </table>
-    <a href="/classbasedview/create/">addStudent</a>
-  </body>
-</html>
+  </tr>
+  {% endfor %}
+</table>
+<a href="/classbasedview/create/">addStudent</a>
+{%endblock%}
