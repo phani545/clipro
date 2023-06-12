@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'CrudFunc',
     'classbasedview',
     'cookieApp',
+    'sessionAPI',
 ]
 
 MIDDLEWARE = [
