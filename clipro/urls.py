@@ -15,15 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include
+from django.urls import path, include
+from CrudFunc import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/',include('firstapp.urls')),
-    path('quoteapp/',include('quoteapp.urls')),
-    path('CrudFunc/',include('CrudFunc.urls')),
-    path('classbasedview/',include('classbasedview.urls')),
-    path('cookie/',include('cookieApp.urls')),
+    #pa#th('/',include('firstapp.urls')),
+    # path('quoteapp/',include('quoteapp.urls')),
+    path('',include('CrudFunc.urls')),
+    # path('classbasedview/',include('classbasedview.urls')),
+    # path('cookie/',include('cookieApp.urls')),
+    # path('sessionAPI/',include('sessionAPI.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
+    # path('',views.getStudents,name='getStudents'),
+    # path('createStudent/',views.createStudent,name='createStudent'),
+    # path('deleteStudent/<int:id>',views.deleteStudent,name='deleteStudent'),
+    # path('updateStudent/<int:id>',views.updateStudent,name='updateStudent'),
 
 ]
